@@ -16,7 +16,9 @@
         <div>
           <center>
 
-            <h2>Poop or Water?</h2>
+            <h1>Poop <br />or<br /> Water?</h2>
+              <br />
+            <h4>The guessing game where you decide if you’re looking at a picture of poop, or water from Flint Michigan!</h4>
             <br /><br />
             <div>
                 <button id="startButton" class="btn btn-lg btn-primary" onclick="startGame()">Play!</button>
@@ -32,35 +34,61 @@
 
 
   </div>
+  <hr />
+
   <div class="row" id="gameBar" style="display: none;">
-    <div class="col-md-3">
+    <div class="container-fluid">
+      <div class="col-md-2 col-sm-1 col-xs-2">
+        <h3>Is it</h3>
+      </div>
+      <div class="col-md-2 col-sm-5 col-xs-2">
+        <button class="btn btn-lg btn-warning" onclick="choicePoop()">Poop?</button>
+        <br /><br />
+
+
+      </div>
+      <div class="col-md-2 col-sm-1 col-xs-1">
+        <h3>or</h3>
+      </div>
+      <div class="col-md-2 col-sm-2 col-xs-2">
+        <button class="btn btn-lg btn-primary" onclick="choiceWater()">Water?</button>
+        <br /><br />
+
+      </div>
+
     </div>
-    <div class="col-md-3">
-      <button class="btn btn-lg btn-warning" onclick="choice()">Poop?</button>
-      <br /><br />
 
+  </div>
+  <div class="row" id="resultRow" style="display:none">
+    <div class="container-fluid">
+      <div class="col-md-3 col-sm-1 col-xs-1">
 
-    </div>
-    <div class="col-md-3">
-      <button class="btn btn-lg btn-primary" onclick="choice()">Water?</button>
-      <br /><br />
+      </div>
+      <div class="col-md-3 col-sm-5 col-xs-5">
+        <button style="display:none;" class="btn btn-lg btn-success" id="correct">Correct! Thats just water.</button>
+        <button style="display:none;" class="btn btn-lg btn-danger" id="nope">Nope! Thats just water.</button>
+      </div>
+      <div class="col-md-3 col-sm-5 col-xs-5">
+        <button class="btn btn-lg btn-info" id="next" onclick="next()">Next!</button>
 
-    </div>
-    <div class="col-md-3">
-      <button style="display:none;" class="btn btn-lg btn-primary" >Correct!</button>
-      <button style="display:none;" class="btn btn-lg btn-primary" >Wrong!</button>
+      </div>
+      <div class="col-md-3 col-sm-1 col-xs-1">
 
-
+      </div>
     </div>
   </div>
 
   <div id="gameScreen" style="display:none;">
+    <hr />
 
     <div class="col-md-2">
 
     </div>
     <div class="col-md-8">
-      <img id="imageHolder" class="img-responsive" src="./assets/imgs/Pic1_Full_Water.jpg"/>
+      <center>
+        <img id="imageHolder" class="img-responsive"/>
+
+      </center>
 
     </div>
     <div class="col-md-2">
@@ -68,26 +96,87 @@
     </div>
 
   </div>
-
+  <div id="endScreen" style="display:none;" class="row">
+    <div class="contorl-fluid">
+      <div class="col-md-12">
+        Your score is <h3 id="score"></h3>
+      </div>
+    </div>
+  </div>
 
 </body>
 
 <script>
+var imageList = [{
+  startImg: "./assets/imgs/Pic1_Water.png",
+  endImg: "./assets/imgs/Pic1_Full_Water.jpg",
+},
+{
+  startImg: "./assets/imgs/Pic2_Water.png",
+  endImg: "./assets/imgs/Pic2_Full_Water.jpg",
+},
+{
+  startImg: "./assets/imgs/Pic3_Water.png",
+  endImg: "./assets/imgs/Pic3_Full_Water.jpg",
+},
+{
+  startImg: "./assets/imgs/Pic5_Water.png",
+  endImg: "./assets/imgs/Pic5_Full_Water.jpg",
+}]
+
+var counter = 0;
+var score = 4;
+
 function startGame(){
   document.getElementById('startButton').style.display = 'none';
   document.getElementById('gameScreen').style.display = 'block';
+  document.getElementById('gameBar').style.display = 'block'; 
+  document.getElementById('imageHolder').src = imageList[0].startImg;
+
+}
+
+function choicePoop(){
+ checkCounter()
+ score -= 1;
+ document.getElementById('gameBar').style.display = 'none';
+ document.getElementById('nope').style.display = 'block';
+ document.getElementById('next').style.display = 'block';
+
+ document.getElementById('resultRow').style.display = 'block';
+
+
+ document.getElementById('imageHolder').src = imageList[counter].endImg;
+ if(counter <= 3){
+   counter += 1;
+   // console.log(counter, score)
+ }
+}
+
+function choiceWater(){
+  document.getElementById('gameBar').style.display = 'none';
+  document.getElementById('next').style.display = 'block';
+
+  document.getElementById('correct').style.display = 'block';
+  document.getElementById('resultRow').style.display = 'block';
+
+  document.getElementById('imageHolder').src = imageList[counter].endImg;
+  if(counter <= 3){
+    counter += 1;
+  }
+}
+
+function next(){
   document.getElementById('gameBar').style.display = 'block';
+  document.getElementById('nope').style.display = 'none';
+  document.getElementById('correct').style.display = 'none';
+  document.getElementById('next').style.display = 'none';
+  document.getElementById('imageHolder').src = imageList[counter].startImg;
 
 }
-imageList = ["./assets/imgs/Pic1_Full_Water.jpg", "./assets/imgs/Pic2_Full_Water.jpg", "./assets/imgs/Pic3_Full_Water.jpg"]
-counter = 0;
-
-function choice(){
-counter += 1;
-
-document.getElementById('imageHolder').src = imageList[counter];
-
+function checkCounter(){
+  if(counter >= 3) {
+    window.location.replace("http://pooporwater.com/results");
+  }
 }
-
 </script>
 </html>
