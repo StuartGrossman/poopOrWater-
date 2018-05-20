@@ -5,105 +5,144 @@
   <meta name="viewport" content="width=device-width">
   <title>Poop Or Water?</title>
   <link rel='stylesheet' id='global-css' href='./assets/css/bootstrap.css'>
+  <link rel="stylesheet" href="./assets/css/bootstrap4-wizardry.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
+<link href="https://fonts.googleapis.com/css?family=Comfortaa|Roboto:300,400" rel="stylesheet">
 </head>
-<body>
+<body style="background-image: url('./assets/imgs/flint.jpg')" id="bodyid">
   <div>
-    <br /><br /><br />
-    <div class="row" >
 
-      <div class="col-md-12 col-sm-12 col-xs-12">
-        <div>
-          <center>
+    <div class="jumbotron bg-wizardry bg-dark text-white mb-0 radius-0">
+      <div class="container">
 
-            <h1>Poop <br />or<br /> Water?</h2>
-              <br />
-            <h4>The guessing game where you decide if you’re looking at a picture of poop, or water from Flint Michigan!</h4>
-            <br /><br />
-            <div>
-                <button id="startButton" class="btn btn-lg btn-primary" onclick="startGame()">Play!</button>
+          <h1 class="display-1 text-light">Poop or Water?
+            <span class="fa fa-magic text-warning display-icon"></span>
+          </h1>
+          <span class="lead" style="font-size: 13px;">The guessing game where you decide if you’re looking at a picture of poop, or water from Flint Michigan!</span>
 
-            </div>
-          </center>
+          <div class="mt-4">
+            <button onclick="startGame()"
+               class="btn btn-pill btn-wide btn-warning btn-lg my-2 btn-ht-dl-message mr-2">
+               Play
+
+            </button>
+
+            <button onclick="donate()"
+               class="btn btn-pill btn-wide btn-outline-light btn-hover-text-dark btn-lg my-2">
+               <span>Donate</span>
+
+            </button>
+          </div>
+
+      </div>
+    </div>
+
+<div class="row" id="scoreBar" style="display: none;">
+  <div class="container-fluid">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <br />
+    <h2> <p id="scoreCard"></p><br /> Amazing Good thanks for playing, please consider donating with the link below!</h2>
+    </div>
+
+  </div>
+  <hr />
+</div>
+
+<div id="gameBoard" >
+<br /><br />
+    <div class="row" id="gameBar" style="display: none;">
+      <div class="container-fluid">
+        <div class="col-md-2 col-sm-1 col-xs-2">
+          <h3>Is it</h3>
+        </div>
+        <div class="col-md-2 col-sm-5 col-xs-2">
+          <button class="btn btn-pill btn-wide btn-warning btn-lg my-2 btn-ht-dl-message mr-2" onclick="choicePoop()">Poop?</button>
+          <br /><br />
+
+
+        </div>
+        <div class="col-md-2 col-sm-1 col-xs-1">
+          <h3>or</h3>
+        </div>
+        <div class="col-md-2 col-sm-2 col-xs-2">
+          <button class="btn btn-pill btn-wide btn-warning btn-lg my-2 btn-ht-dl-message mr-2" onclick="choiceWater()">Water?</button>
+          <br /><br />
 
         </div>
 
       </div>
 
     </div>
+    <div class="row" id="resultRow" style="display:none">
+      <div class="container-fluid">
+        <div class="col-md-3 col-sm-1 col-xs-1">
 
+        </div>
+        <div class="col-md-3 col-sm-5 col-xs-5">
+          <button style="display:none;" class="btn btn-lg btn-success" id="correct">Correct! Thats just water.</button>
+          <button style="display:none;" class="btn btn-lg btn-danger" id="nope">Nope! Thats just water.</button>
+        </div>
+        <div class="col-md-3 col-sm-5 col-xs-5">
+          <button class="btn btn-lg btn-info" id="next" onclick="next()">Next!</button>
 
-  </div>
-  <hr />
+        </div>
+        <div class="col-md-3 col-sm-1 col-xs-1">
 
-  <div class="row" id="gameBar" style="display: none;">
+        </div>
+      </div>
+    </div>
+
+    <div id="gameScreen" style="display:none;">
+      <hr />
+
+      <div class="col-md-2">
+
+      </div>
+      <div class="col-md-8">
+        <center>
+          <img id="imageHolder" class="img-rounded img-responsive"/>
+
+        </center>
+
+      </div>
+      <div class="col-md-2">
+
+      </div>
+
+    </div>
+    <div id="endScreen" style="display:none;" class="row">
+      <div class="contorl-fluid">
+        <div class="col-md-12">
+          Your score is <h3 id="score"></h3>
+        </div>
+      </div>
+    </div>
+
+</div>
+<div id="donate" style="display: none;">
+  <div class="row">
     <div class="container-fluid">
-      <div class="col-md-2 col-sm-1 col-xs-2">
-        <h3>Is it</h3>
-      </div>
-      <div class="col-md-2 col-sm-5 col-xs-2">
-        <button class="btn btn-lg btn-warning" onclick="choicePoop()">Poop?</button>
-        <br /><br />
+      <div class="col-md-12 col-sm-12 col-xm-12">
+        <p class="lead" style="font-size: 17px;">
+          <br />
+          The State of Michigan has ended the program distributing free water bottles to Flint residents. However, the water pipes are still contaminated and will not fully be replaced until at least 2020. Meaning there are still legitimate concerns about the safety of Flint’s water.
 
+          I can’t force the state of Michigan to be good human beings and hand out water to the people of Flint (who clearly need it). I can encourage all of us to be good human beings and ask for donations to the Flint Water Fund, which has been set up to donate water bottles and filters to residents of Flint.
 
-      </div>
-      <div class="col-md-2 col-sm-1 col-xs-1">
-        <h3>or</h3>
-      </div>
-      <div class="col-md-2 col-sm-2 col-xs-2">
-        <button class="btn btn-lg btn-primary" onclick="choiceWater()">Water?</button>
-        <br /><br />
+          Please consider donating below.
+        </p>
+        <a href="http://www.unitedwaygenesee.org/flintwaterfund" target="_blank">
+          <span class="btn btn-pill btn-wide btn-warning btn-lg my-2 btn-ht-dl-message mr-2">Donate Now</span>
 
+        </a>
       </div>
 
-    </div>
-
-  </div>
-  <div class="row" id="resultRow" style="display:none">
-    <div class="container-fluid">
-      <div class="col-md-3 col-sm-1 col-xs-1">
-
-      </div>
-      <div class="col-md-3 col-sm-5 col-xs-5">
-        <button style="display:none;" class="btn btn-lg btn-success" id="correct">Correct! Thats just water.</button>
-        <button style="display:none;" class="btn btn-lg btn-danger" id="nope">Nope! Thats just water.</button>
-      </div>
-      <div class="col-md-3 col-sm-5 col-xs-5">
-        <button class="btn btn-lg btn-info" id="next" onclick="next()">Next!</button>
-
-      </div>
-      <div class="col-md-3 col-sm-1 col-xs-1">
-
-      </div>
     </div>
   </div>
 
-  <div id="gameScreen" style="display:none;">
-    <hr />
 
-    <div class="col-md-2">
-
-    </div>
-    <div class="col-md-8">
-      <center>
-        <img id="imageHolder" class="img-responsive"/>
-
-      </center>
-
-    </div>
-    <div class="col-md-2">
-
-    </div>
-
-  </div>
-  <div id="endScreen" style="display:none;" class="row">
-    <div class="contorl-fluid">
-      <div class="col-md-12">
-        Your score is <h3 id="score"></h3>
-      </div>
-    </div>
-  </div>
-
+</div>
 </body>
 
 <script>
@@ -128,9 +167,24 @@ var counter = 0;
 var score = 4;
 
 function startGame(){
-  document.getElementById('startButton').style.display = 'none';
+  console.log('game start')
+ score = 4
+ counter = 0
+  document.getElementById('scoreBar').style.display = 'none';
+
+  document.getElementById('bodyid').style = {'background-image' : 'none'};
+  document.getElementById('donate').style.display = 'none';
+  document.getElementById('nope').style.display = 'none';
+  document.getElementById('correct').style.display = 'none';
+  document.getElementById('next').style.display = 'none';
+
+  // document.getElementById('body').style = {'background-color': '#e9e9e9'}
+  // document.getElementById('body').style.opacity = '.9';
+
+  document.getElementById('gameBoard').style.display = 'block';
+
   document.getElementById('gameScreen').style.display = 'block';
-  document.getElementById('gameBar').style.display = 'block'; 
+  document.getElementById('gameBar').style.display = 'block';
   document.getElementById('imageHolder').src = imageList[0].startImg;
 
 }
@@ -138,6 +192,7 @@ function startGame(){
 function choicePoop(){
  checkCounter()
  score -= 1;
+ console.log(score)
  document.getElementById('gameBar').style.display = 'none';
  document.getElementById('nope').style.display = 'block';
  document.getElementById('next').style.display = 'block';
@@ -153,6 +208,7 @@ function choicePoop(){
 }
 
 function choiceWater(){
+  checkCounter();
   document.getElementById('gameBar').style.display = 'none';
   document.getElementById('next').style.display = 'block';
 
@@ -175,8 +231,20 @@ function next(){
 }
 function checkCounter(){
   if(counter >= 3) {
-    window.location.replace("http://pooporwater.com/results");
+    document.getElementById('gameBoard').style.display = 'none';
+    document.getElementById('donate').style.display = 'block'
+    document.getElementById('scoreBar').style.display = 'block';
+
+    // window.location.replace("http://pooporwater.com/results");
   }
+}
+function donate(){
+  document.getElementById('bodyid').style = {'background-image' : 'none'}
+  // var finialScore = score.toString()
+  // console.log(finialScore)
+  // document.getElementById('scoreCard').innerHTML = 'hello'
+  document.getElementById('gameBoard').style.display = 'none';
+  document.getElementById('donate').style.display = 'block'
 }
 </script>
 </html>
