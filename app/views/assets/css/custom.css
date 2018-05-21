@@ -1,8 +1,8 @@
-/* @media (min-width: 400px) {
+@media (min-width: 400px) {
     #bodyid {
-        background-image: url('./imgs/flint.jpg');
+        background-image: url('../imgs/flintrelysmall.jpg');
     }
-} */
+}
 
 @media (min-width: 500px) {
     #bodyid {
@@ -11,6 +11,11 @@
 }
 
 @media (min-width: 600px) {
+    #bodyid {
+        background-image: url('../imgs/flintmid.jpg');
+    }
+}
+@media (min-width: 800px) {
     #bodyid {
         background-image: url('../imgs/flint.jpg');
     }
