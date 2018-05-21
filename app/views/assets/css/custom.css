@@ -1,6 +1,12 @@
-@media (min-width: 400px) {
+@media (min-width: 300px) {
     #bodyid {
         background-image: url('../imgs/flintrelysmall.jpg');
+    }
+}
+
+@media (min-width: 400px) {
+    #bodyid {
+        background-image: url('../imgs/flintkindasmall.jpg');
     }
 }
 
@@ -15,7 +21,12 @@
         background-image: url('../imgs/flintmid.jpg');
     }
 }
-@media (min-width: 800px) {
+@media (min-width: 1024px) {
+    #bodyid {
+        background-image: url('../imgs/flintipad.jpg');
+    }
+}
+@media (min-width: 1100px) {
     #bodyid {
         background-image: url('../imgs/flint.jpg');
     }
