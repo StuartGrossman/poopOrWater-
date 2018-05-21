@@ -4,15 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>Poop Or Water?</title>
-  <link rel="icon" href="./sources/images/favicon.png">
+  <link rel="icon" href="./assets/imgs/favicon.png" type="image/ico">
 
   <link rel='stylesheet' id='global-css' href='./assets/css/bootstrap.css'>
   <link rel="stylesheet" href="./assets/css/bootstrap4-wizardry.css">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-
+  <link rel="stylesheet" href="./assets/css/custom.css" />
 <link href="https://fonts.googleapis.com/css?family=Comfortaa|Roboto:300,400" rel="stylesheet">
 </head>
-<body style="background-image: url('./assets/imgs/flint.jpg')" id="bodyid">
+<body id="bodyid">
   <div>
 
     <div class="jumbotron bg-wizardry bg-dark text-white mb-0 radius-0">
@@ -21,7 +21,7 @@
           <h1 class="display-1 text-light">Poop or Water?
             <!-- <span class="fa fa-magic text-warning display-icon"></span> -->
           </h1>
-          <span class="lead" style="font-size: 13px;">The guessing game where you decide if you’re looking at a picture of poop, or water from Flint Michigan</span>
+          <span class="lead" style="font-size: 13px;">The guessing game where you decide if you’re looking at a picture of poop, or water from Flint Michigan.</span>
 
           <div class="mt-4">
             <button onclick="startGame()"
@@ -48,7 +48,9 @@
     <div class="col-md-12 col-sm-12 col-xs-12">
       <br />
       <!-- <span style="font-size:22px;">Your score is <span id="scoreCard"></span> / 4!<br /> Amazing thanks for playing! Please consider donating with the link below!</span> -->
-      <span style="font-size:22px;">This is really, really, shitty.</span>
+      <center>
+        <span style="font-size:22px;">This is really, really, shitty.</span>
+      </center>
 
     </div>
 
@@ -271,7 +273,7 @@ function checkCounter(){
     document.getElementById('gameBoard').style.display = 'none';
     document.getElementById('donate').style.display = 'block'
     document.getElementById('scoreBar').style.display = 'block';
-    document.getElementById('scoreCard').innerHTML = score
+    // document.getElementById('scoreCard').innerHTML = score
 
     // window.location.replace("http://pooporwater.com/results");
   }

@@ -1,0 +1,17 @@
+/* @media (min-width: 400px) {
+    #bodyid {
+        background-image: url('./imgs/flint.jpg');
+    }
+} */
+
+@media (min-width: 500px) {
+    #bodyid {
+        background-image: url('../imgs/flintsmall.jpg');
+    }
+}
+
+@media (min-width: 600px) {
+    #bodyid {
+        background-image: url('../imgs/flint.jpg');
+    }
+}
