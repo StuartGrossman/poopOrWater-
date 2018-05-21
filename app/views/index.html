@@ -4,6 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>Poop Or Water?</title>
+  <link rel="icon" href="./sources/images/favicon.png">
+
   <link rel='stylesheet' id='global-css' href='./assets/css/bootstrap.css'>
   <link rel="stylesheet" href="./assets/css/bootstrap4-wizardry.css">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -15,11 +17,11 @@
 
     <div class="jumbotron bg-wizardry bg-dark text-white mb-0 radius-0">
       <div class="container">
-
+        <center>
           <h1 class="display-1 text-light">Poop or Water?
-            <span class="fa fa-magic text-warning display-icon"></span>
+            <!-- <span class="fa fa-magic text-warning display-icon"></span> -->
           </h1>
-          <span class="lead" style="font-size: 13px;">The guessing game where you decide if you’re looking at a picture of poop, or water from Flint Michigan!</span>
+          <span class="lead" style="font-size: 13px;">The guessing game where you decide if you’re looking at a picture of poop, or water from Flint Michigan</span>
 
           <div class="mt-4">
             <button onclick="startGame()"
@@ -28,12 +30,15 @@
 
             </button>
 
-            <button onclick="donate()"
+            <button onclick="donate()" id="orginDonateButton"
                class="btn btn-pill btn-wide btn-outline-light btn-hover-text-dark btn-lg my-2" style="color:white">
                <span>Donate</span>
 
             </button>
           </div>
+        </center>
+
+
 
       </div>
     </div>
@@ -42,7 +47,9 @@
   <div class="container-fluid">
     <div class="col-md-12 col-sm-12 col-xs-12">
       <br />
-      <span style="font-size:22px;">Your score is <span id="scoreCard"></span> / 4!<br /> Amazing thanks for playing! Please consider donating with the link below!</span>
+      <!-- <span style="font-size:22px;">Your score is <span id="scoreCard"></span> / 4!<br /> Amazing thanks for playing! Please consider donating with the link below!</span> -->
+      <span style="font-size:22px;">This is really, really, shitty.</span>
+
     </div>
 
   </div>
@@ -92,8 +99,8 @@
 
         </div>
         <div class="col-md-3 col-sm-5 col-xs-12">
-          <button style="display:none;" class="btn btn-pill btn-wide btn-lg my-2 btn-ht-dl-message mr-2 btn-success" id="correct">Correct! Thats just water.</button>
-          <button style="display:none;" class="btn btn-pill btn-wide btn-lg my-2 btn-ht-dl-message mr-2 btn-danger" id="nope">Nope! Thats just water.</button>
+          <button style="display:none;" class="btn btn-pill btn-wide btn-lg my-2 btn-ht-dl-message mr-2 btn-success" id="correct">Yup!</button>
+          <button style="display:none;" class="btn btn-pill btn-wide btn-lg my-2 btn-ht-dl-message mr-2 btn-danger" id="nope">Nope!</button>
         </div>
         <div class="col-md-3 col-sm-5 col-xs-12">
           <button class="btn btn-pill btn-wide btn-lg my-2 btn-ht-dl-message mr-2 btn-info" id="next" onclick="next()" style="margin-left:15px;">Next</button>
@@ -136,18 +143,32 @@
   <div class="row">
     <div class="container-fluid">
       <div class="col-md-12 col-sm-12 col-xm-12">
-        <p class="lead" style="font-size: 17px;">
-          <br />
-          The State of Michigan has ended the program distributing free water bottles to Flint residents. However, the water pipes are still contaminated and will not fully be replaced until at least 2020. Meaning there are still legitimate concerns about the safety of Flint’s water.
+        <center>
+          <div class="lead" style="font-size: 17px;">
+            <br />
+            <p>
 
-          I can’t force the state of Michigan to be good human beings and hand out water to the people of Flint (who clearly need it). I can encourage all of us to be good human beings and ask for donations to the Flint Water Fund, which has been set up to donate water bottles and filters to residents of Flint.
+              The State of Michigan has ended the program distributing free water bottles to Flint residents. However, the water pipes are still contaminated and will not fully be replaced until at least 2020. Meaning there are still legitimate concerns about the safety of Flint’s water.
+            </p>
+            <p>
 
-          Please consider donating below.
-        </p>
-        <a href="http://www.unitedwaygenesee.org/flintwaterfund" target="_blank">
-          <span class="btn btn-pill btn-wide btn-warning btn-lg my-2 btn-ht-dl-message mr-2" style="color:white;">Donate Now</span>
+              I can’t force the state of Michigan to do the right thing. But I can encourage all of us to help.
 
-        </a>
+            </p>
+            <p>
+
+              Please consider donating to the Flint Water Fund below.
+
+            </p>
+
+          </div>
+          <a href="http://www.unitedwaygenesee.org/flintwaterfund" target="_blank">
+            <span class="btn btn-pill btn-wide btn-warning btn-lg my-2 btn-ht-dl-message mr-2" style="color:white;">Donate Now</span>
+
+          </a>
+        </center>
+
+
       </div>
 
     </div>
@@ -183,8 +204,9 @@ function startGame(){
  score = 4
  counter = 0
   document.getElementById('scoreBar').style.display = 'none';
+  document.getElementById('orginDonateButton').style.display = 'inital';
 
-  document.getElementById('bodyid').style = {'background-image' : './assets/imgs/blank.png'};
+  document.getElementById('bodyid').style.backgroundImage =  'url(./assets/imgs/blank.png)'
   document.getElementById('donate').style.display = 'none';
   document.getElementById('nope').style.display = 'none';
   document.getElementById('correct').style.display = 'none';
@@ -255,7 +277,8 @@ function checkCounter(){
   }
 }
 function donate(){
-  document.getElementById('bodyid').style = {'background-image' : './assets/imgs/blank.png'}
+  document.getElementById('bodyid').style.backgroundImage =  'url(./assets/imgs/blank.png)'
+  document.getElementById('orginDonateButton').style.display = 'none';
   // var finialScore = score.toString()
   // console.log(finialScore)
   document.getElementById('gameBoard').style.display = 'none';
