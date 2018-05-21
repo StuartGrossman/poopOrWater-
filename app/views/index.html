@@ -10,7 +10,7 @@
 
 <link href="https://fonts.googleapis.com/css?family=Comfortaa|Roboto:300,400" rel="stylesheet">
 </head>
-<body style="background-image: url('./assets/imgs/flint.jpg')"  class="image-responsive" id="bodyid">
+<body style="background-image: url('./assets/imgs/flint.jpg')" id="bodyid">
   <div>
 
     <div class="jumbotron bg-wizardry bg-dark text-white mb-0 radius-0">
@@ -184,7 +184,7 @@ function startGame(){
  counter = 0
   document.getElementById('scoreBar').style.display = 'none';
 
-  document.getElementById('bodyid').style = {'background-image' : 'none'};
+  document.getElementById('bodyid').style = {'background-image' : './assets/imgs/blank.png'};
   document.getElementById('donate').style.display = 'none';
   document.getElementById('nope').style.display = 'none';
   document.getElementById('correct').style.display = 'none';
@@ -255,7 +255,7 @@ function checkCounter(){
   }
 }
 function donate(){
-  document.getElementById('bodyid').style = {'background-image' : 'none'}
+  document.getElementById('bodyid').style = {'background-image' : './assets/imgs/blank.png'}
   // var finialScore = score.toString()
   // console.log(finialScore)
   document.getElementById('gameBoard').style.display = 'none';
