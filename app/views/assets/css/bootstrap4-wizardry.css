@@ -5293,7 +5293,8 @@ button.bg-light:focus {
   background-color: #b6c1d3 !important; }
 
 .bg-dark {
-  background-color: #22232d !important; }
+  background-color: #22232d !important;
+  }
 
 a.bg-dark:hover, a.bg-dark:focus,
 button.bg-dark:hover,
@@ -7824,7 +7825,9 @@ a.text-dark:hover, a.text-dark:focus {
   color: #d5dce6; }
 
 .bg-wizardry {
-  background: url("../imgs/bg-wizardry.jpg"); }
+  opacity: .9;
+  /* background: url("../imgs/flint-top.jpg"); */
+  }
 
 @media (max-width: 767.98px) {
   .display-1 {

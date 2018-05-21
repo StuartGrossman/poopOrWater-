@@ -10,7 +10,7 @@
 
 <link href="https://fonts.googleapis.com/css?family=Comfortaa|Roboto:300,400" rel="stylesheet">
 </head>
-<body style="background-image: url('./assets/imgs/flint.jpg')" id="bodyid">
+<body style="background-image: url('./assets/imgs/flint.jpg')"  class="image-responsive" id="bodyid">
   <div>
 
     <div class="jumbotron bg-wizardry bg-dark text-white mb-0 radius-0">
@@ -23,13 +23,13 @@
 
           <div class="mt-4">
             <button onclick="startGame()"
-               class="btn btn-pill btn-wide btn-warning btn-lg my-2 btn-ht-dl-message mr-2">
+               class="btn btn-pill btn-wide btn-warning btn-lg my-2 btn-ht-dl-message mr-2" style="color:white">
                Play
 
             </button>
 
             <button onclick="donate()"
-               class="btn btn-pill btn-wide btn-outline-light btn-hover-text-dark btn-lg my-2">
+               class="btn btn-pill btn-wide btn-outline-light btn-hover-text-dark btn-lg my-2" style="color:white">
                <span>Donate</span>
 
             </button>
@@ -42,7 +42,7 @@
   <div class="container-fluid">
     <div class="col-md-12 col-sm-12 col-xs-12">
       <br />
-    <h2> <p id="scoreCard"></p><br /> Amazing Good thanks for playing, please consider donating with the link below!</h2>
+    <h2> <p id="scoreCard"></p><br /> Amazing thanks for playing! Please consider donating with the link below!</h2>
     </div>
 
   </div>
@@ -53,20 +53,32 @@
 <br /><br />
     <div class="row" id="gameBar" style="display: none;">
       <div class="container-fluid">
-        <div class="col-md-2 col-sm-1 col-xs-2">
-          <h3>Is it</h3>
-        </div>
-        <div class="col-md-2 col-sm-5 col-xs-2">
-          <button class="btn btn-pill btn-wide btn-warning btn-lg my-2 btn-ht-dl-message mr-2" onclick="choicePoop()">Poop?</button>
-          <br /><br />
+        <!-- <div class="col-md-2 col-sm-1 col-xs-2"> -->
+          <!-- <center>
+            <h3>Is it</h3>
+
+          </center> -->
+        <!-- </div> -->
+        <div class="col-md-5 col-sm-5 col-xs-5">
+          <center>
+            <button class="btn btn-pill btn-wide btn-warning btn-lg my-2 btn-ht-dl-message mr-2" onclick="choicePoop()" style="color:white">Poop?</button>
+
+          </center>
 
 
-        </div>
-        <div class="col-md-2 col-sm-1 col-xs-1">
-          <h3>or</h3>
+
         </div>
         <div class="col-md-2 col-sm-2 col-xs-2">
-          <button class="btn btn-pill btn-wide btn-warning btn-lg my-2 btn-ht-dl-message mr-2" onclick="choiceWater()">Water?</button>
+          <center>
+            <h1 style="margin-top: 6px;">or</h1>
+
+          </center>
+        </div>
+        <div class="col-md-5 col-sm-5 col-xs-5">
+          <center>
+            <button class="btn btn-pill btn-wide btn-warning btn-lg my-2 btn-ht-dl-message mr-2" onclick="choiceWater()" style="color:white">Water?</button>
+
+          </center>
           <br /><br />
 
         </div>
@@ -80,11 +92,11 @@
 
         </div>
         <div class="col-md-3 col-sm-5 col-xs-5">
-          <button style="display:none;" class="btn btn-lg btn-success" id="correct">Correct! Thats just water.</button>
-          <button style="display:none;" class="btn btn-lg btn-danger" id="nope">Nope! Thats just water.</button>
+          <button style="display:none;" class="btn btn-pill btn-wide btn-lg my-2 btn-ht-dl-message mr-2 btn-success" id="correct">Correct! Thats just water.</button>
+          <button style="display:none;" class="btn btn-pill btn-wide btn-lg my-2 btn-ht-dl-message mr-2 btn-danger" id="nope">Nope! Thats just water.</button>
         </div>
         <div class="col-md-3 col-sm-5 col-xs-5">
-          <button class="btn btn-lg btn-info" id="next" onclick="next()">Next!</button>
+          <button class="btn btn-pill btn-wide btn-lg my-2 btn-ht-dl-message mr-2 btn-info" id="next" onclick="next()" style="margin-left:15px;">Next</button>
 
         </div>
         <div class="col-md-3 col-sm-1 col-xs-1">
@@ -96,19 +108,19 @@
     <div id="gameScreen" style="display:none;">
       <hr />
 
-      <div class="col-md-2">
+      <!-- <div class="col-md-2">
 
-      </div>
-      <div class="col-md-8">
+      </div> -->
+      <div class="col-md-12 col-sm-12 col-xs-12">
         <center>
           <img id="imageHolder" class="img-rounded img-responsive"/>
 
         </center>
 
       </div>
-      <div class="col-md-2">
+      <!-- <div class="col-md-2">
 
-      </div>
+      </div> -->
 
     </div>
     <div id="endScreen" style="display:none;" class="row">
@@ -133,7 +145,7 @@
           Please consider donating below.
         </p>
         <a href="http://www.unitedwaygenesee.org/flintwaterfund" target="_blank">
-          <span class="btn btn-pill btn-wide btn-warning btn-lg my-2 btn-ht-dl-message mr-2">Donate Now</span>
+          <span class="btn btn-pill btn-wide btn-warning btn-lg my-2 btn-ht-dl-message mr-2" style="color:white;">Donate Now</span>
 
         </a>
       </div>
