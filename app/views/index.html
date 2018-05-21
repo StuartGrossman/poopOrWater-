@@ -206,7 +206,7 @@ function startGame(){
  score = 4
  counter = 0
   document.getElementById('scoreBar').style.display = 'none';
-  document.getElementById('orginDonateButton').style.display = 'inital';
+  document.getElementById('orginDonateButton').style.display = 'block';
 
   document.getElementById('bodyid').style.backgroundImage =  'url(./assets/imgs/blank.png)'
   document.getElementById('donate').style.display = 'none';
@@ -274,6 +274,7 @@ function checkCounter(){
     document.getElementById('donate').style.display = 'block'
     document.getElementById('scoreBar').style.display = 'block';
     // document.getElementById('scoreCard').innerHTML = score
+    document.getElementById('orginDonateButton').style.display = 'none';
 
     // window.location.replace("http://pooporwater.com/results");
   }
