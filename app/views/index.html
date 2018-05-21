@@ -42,7 +42,7 @@
   <div class="container-fluid">
     <div class="col-md-12 col-sm-12 col-xs-12">
       <br />
-    <h2> <p id="scoreCard"></p><br /> Amazing thanks for playing! Please consider donating with the link below!</h2>
+      <span style="font-size:22px;">Your score is <span id="scoreCard"></span> / 4!<br /> Amazing thanks for playing! Please consider donating with the link below!</span>
     </div>
 
   </div>
@@ -88,18 +88,18 @@
     </div>
     <div class="row" id="resultRow" style="display:none">
       <div class="container-fluid">
-        <div class="col-md-3 col-sm-1 col-xs-1">
+        <div class="col-md-3 col-sm-1 ">
 
         </div>
-        <div class="col-md-3 col-sm-5 col-xs-5">
+        <div class="col-md-3 col-sm-5 col-xs-12">
           <button style="display:none;" class="btn btn-pill btn-wide btn-lg my-2 btn-ht-dl-message mr-2 btn-success" id="correct">Correct! Thats just water.</button>
           <button style="display:none;" class="btn btn-pill btn-wide btn-lg my-2 btn-ht-dl-message mr-2 btn-danger" id="nope">Nope! Thats just water.</button>
         </div>
-        <div class="col-md-3 col-sm-5 col-xs-5">
+        <div class="col-md-3 col-sm-5 col-xs-12">
           <button class="btn btn-pill btn-wide btn-lg my-2 btn-ht-dl-message mr-2 btn-info" id="next" onclick="next()" style="margin-left:15px;">Next</button>
 
         </div>
-        <div class="col-md-3 col-sm-1 col-xs-1">
+        <div class="col-md-3 col-sm-1">
 
         </div>
       </div>
@@ -239,13 +239,17 @@ function next(){
   document.getElementById('correct').style.display = 'none';
   document.getElementById('next').style.display = 'none';
   document.getElementById('imageHolder').src = imageList[counter].startImg;
+  checkCounter();
 
 }
 function checkCounter(){
+  console.log('the count is ' + counter + ' the score is ' + score)
   if(counter >= 3) {
+    console.log('ending game')
     document.getElementById('gameBoard').style.display = 'none';
     document.getElementById('donate').style.display = 'block'
     document.getElementById('scoreBar').style.display = 'block';
+    document.getElementById('scoreCard').innerHTML = score
 
     // window.location.replace("http://pooporwater.com/results");
   }
@@ -254,7 +258,6 @@ function donate(){
   document.getElementById('bodyid').style = {'background-image' : 'none'}
   // var finialScore = score.toString()
   // console.log(finialScore)
-  // document.getElementById('scoreCard').innerHTML = 'hello'
   document.getElementById('gameBoard').style.display = 'none';
   document.getElementById('donate').style.display = 'block'
 }
