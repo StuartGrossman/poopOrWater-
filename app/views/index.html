@@ -230,6 +230,8 @@ function choicePoop(){
  checkCounter()
  score -= 1;
  console.log(score)
+ document.getElementById('imageHolder').src = imageList[counter].endImg;
+ 
  document.getElementById('gameBar').style.display = 'none';
  document.getElementById('nope').style.display = 'block';
  document.getElementById('next').style.display = 'block';
@@ -237,7 +239,6 @@ function choicePoop(){
  document.getElementById('resultRow').style.display = 'block';
 
 
- document.getElementById('imageHolder').src = imageList[counter].endImg;
  if(counter <= 3){
    counter += 1;
    // console.log(counter, score)
@@ -246,24 +247,26 @@ function choicePoop(){
 
 function choiceWater(){
   checkCounter();
+  document.getElementById('imageHolder').src = imageList[counter].endImg;
+
   document.getElementById('gameBar').style.display = 'none';
   document.getElementById('next').style.display = 'block';
 
   document.getElementById('correct').style.display = 'block';
   document.getElementById('resultRow').style.display = 'block';
 
-  document.getElementById('imageHolder').src = imageList[counter].endImg;
   if(counter <= 3){
     counter += 1;
   }
 }
 
 function next(){
+  document.getElementById('imageHolder').src = imageList[counter].startImg;
+
   document.getElementById('gameBar').style.display = 'block';
   document.getElementById('nope').style.display = 'none';
   document.getElementById('correct').style.display = 'none';
   document.getElementById('next').style.display = 'none';
-  document.getElementById('imageHolder').src = imageList[counter].startImg;
   checkCounter();
 
 }
